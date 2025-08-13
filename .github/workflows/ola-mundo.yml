@@ -1,18 +1,19 @@
 name: Meu primeiro workflow
 
 on:
-    push:
-      branches:["main"] #roda quando faz push na main
-    workflow_dispatch: #permite rodar manualmente no botão "run workflow"
+  push:
+    branches: ["main"]     # roda quando faz push na main
+  workflow_dispatch:      # permite rodar manualmente no botão run workflow
 
-    jobs:
+    
+jobs:
       diga-ola:
-        runs-on: ubuntu-latest #tipo de máquina
+        runs-on: ubuntu-latest # tipo de máquina
         steps:
-         -name: Pegar o código do respositório
-          uses: actions/checkout@v4
+         - name: Pegar o código do respositório
+           uses: actions/checkout@v4
 
-          -name: Dizer oi
+         - name: Dizer oi
            run: echo "Oi, O github actions esta funcionando!" 
           
 
